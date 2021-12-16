@@ -26,13 +26,19 @@ const App = () => {
       </form>
       <h4>内容</h4>
       {
-        state.map(chat => (
-          <div className="body">
-            <h5>{chat.id}</h5>
-            <h5>{chat.body}</h5>
-            <button type="button" className="btn">削除</button>
-          </div>
-        ))
+        state.map((chat, index) => {
+          const id = chat.id
+          const handleClickDeleteButton = () => {
+            dispatch({type: 'DELETE_CHAT', id})
+          }
+          return (
+            <div key={index} className="body">
+              <h5>{id}</h5>
+              <h5>{chat.body}</h5>
+              <button type="button" className="btn" onClick={handleClickDeleteButton} >削除</button>
+            </div>
+          )
+        })
       }
     </div>
   )
