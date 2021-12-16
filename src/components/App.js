@@ -1,5 +1,6 @@
 import React, {useReducer, useState} from 'react'
-import '../App.css';
+import '../App.css'
+import Chat from './Chat'
 import reducer from '../reducers'
 
 const App = () => {
@@ -12,10 +13,8 @@ const App = () => {
       type: 'CREATE_CHAT',
       body
     })
+    setBody('')
   }
-
-
-  console.log({state})
 
   return (
     <div>
@@ -25,21 +24,7 @@ const App = () => {
         <button onClick={addChat}>送信</button>
       </form>
       <h4>内容</h4>
-      {
-        state.map((chat, index) => {
-          const id = chat.id
-          const handleClickDeleteButton = () => {
-            dispatch({type: 'DELETE_CHAT', id})
-          }
-          return (
-            <div key={index} className="body">
-              <h5>{id}</h5>
-              <h5>{chat.body}</h5>
-              <button type="button" className="btn" onClick={handleClickDeleteButton} >削除</button>
-            </div>
-          )
-        })
-      }
+      { state.map((chat, index) => (<Chat key = {index} chat = {chat} dispatch = {dispatch} />))}
     </div>
   )
 }
