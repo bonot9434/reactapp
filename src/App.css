@@ -1,4 +1,16 @@
-.App {
+.body {
+  display: flex;
+}
+
+h5 {
+  padding: 10px;
+}
+
+/* .btn {
+  height: 30px;
+} */
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +47,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

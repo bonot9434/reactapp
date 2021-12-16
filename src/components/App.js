@@ -1,5 +1,5 @@
 import React, {useReducer, useState} from 'react'
-
+import '../App.css';
 import reducer from '../reducers'
 
 const App = () => {
@@ -27,10 +27,11 @@ const App = () => {
       <h4>内容</h4>
       {
         state.map(chat => (
-          <h5>
-            <div>{chat.id}</div>
-            <div>{chat.body}</div>
-          </h5>
+          <div className="body">
+            <h5>{chat.id}</h5>
+            <h5>{chat.body}</h5>
+            <button type="button" className="btn">削除</button>
+          </div>
         ))
       }
     </div>
