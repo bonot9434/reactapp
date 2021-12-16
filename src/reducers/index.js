@@ -1,4 +1,4 @@
-const chat = (state = [], action) => {
+const chats = (state = [], action) => {
   switch(action.type) {
     case'CREATE_CHAT':
       const chat = {body: action.body}
@@ -13,4 +13,4 @@ const chat = (state = [], action) => {
 
 }
 
-export default chat
+export default chats
