@@ -25,6 +25,14 @@ const App = () => {
         <button onClick={addChat}>送信</button>
       </form>
       <h4>内容</h4>
+      {
+        state.map(chat => (
+          <h5>
+            <div>{chat.id}</div>
+            <div>{chat.body}</div>
+          </h5>
+        ))
+      }
     </div>
   )
 }
