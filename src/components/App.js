@@ -5,21 +5,24 @@ import reducer from '../reducers'
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, [])
+  const [name, setName] = useState('')
   const [body, setBody] = useState('')
 
   const addChat = e => {
     e.preventDefault()
     dispatch({
       type: 'CREATE_CHAT',
+      name,
       body
     })
+    setName('')
     setBody('')
   }
 
   return (
     <div>
       <form>
-        <label>本文</label>
+        <input id="userName" value={name} onChange={ e => setName(e.target.value)}/>
         <input id="formChat" value={body} onChange={ e => setBody(e.target.value)}/>
         <button onClick={addChat}>送信</button>
       </form>

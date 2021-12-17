@@ -8,8 +8,9 @@ const Chat = ({ dispatch, chat }) => {
   return (
     <div className="body">
       <h5>{id}</h5>
+      <h5>{chat.name}</h5>
       <h5>{chat.body}</h5>
-      <button type="button" className="btn" onClick={handleClickDeleteButton} >削除</button>
+      <button type="button" className="btn" onClick={handleClickDeleteButton}>削除</button>
     </div>
   )
 }
